@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="../images/icon192.png">
+    <title>List of Objects </title>
+
+  <style>
+    body { max-width: 500px; }
+    #inp { white-space: pre-wrap; }
+    #sample { overflow-x: auto; }
+    #out { color: blue; }
+  </style>
+</head>
+
+<body>
+<p> Hıgh order fonksiyonlar sayesinde daha yüksek dereceli bir işlevi olan metotları, bir bağımsız veya daha fazla değişken ile yapan fonksiyonlardır. Benim yazdığım metotlar push,sort, map ve filter metotlarıdır.</p>
+<h2 id=title></h2>
+<b>Text input &emsp;
+<input type=button id=convert value=Convert onclick="toList()">
+</b>
+<p>
+  <textarea id=inp onchange="convert.disabled=false" rows=10 cols=50 >
+  </textarea>
+</p>
+<b>JSON output</b>
+<pre id=out></pre>
+<hr />
+<b>Sample code</b>
+<pre id=sample></pre>
+<hr />
+<p>Ref: 
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters#Examples" 
+   target="NewTab">Rest Parameters</a>
+</p>
+
+<script>
+"use strict";
+function toList(str) {
+  function toObject(x) {
+    let b = {}
+    for (let [i,s] of x.split('\t').entries())
+      b[keys[i]] = (isNaN(s)? s : Number(s))
+    return b
+  }
+    if (str) inp.value = str
+    else str = inp.value
+    convert.disabled = true
+    let [d0, ...data] = str.split('\n')
+    let keys = d0.split('\t')
+    console.log("Keys:", keys)
+    let a = data.map(toObject)
+    out.innerText = JSON.stringify(a, '' ,2)
+    console.table(a)
+    return a
+}
+const PLANET = 
+`Region	Rep	Item	Units	Total
+East	Jones	Pencil	95	189.05
+Central	Kivell	Binder	50	999.50
+Central	Jardine	Pencil	36	179.64
+Central	Gill	Pen	27	539.73
+West	Sorvino	Pencil	56	167.44
+East	Jones	Binder	60	299.40
+Central	Andrews	Pencil	75	149.25
+`,
+
+MOUNT = `Region	Rep	Item	Units	Total
+East	Jones	Pencil	95	189.05
+Central	Kivell	Binder	50	999.50
+Central	Jardine	Pencil	36	179.64
+Central	Gill	Pen	27	539.73
+West	Sorvino	Pencil	56	167.44
+East	Jones	Binder	60	299.40
+Central	Andrews	Pencil	75	149.25`
+
+    title.innerText = document.title
+    sample.innerText = toList
+    inp.value = MOUNT
+    //toList()  //array of objects
+</script>
+
+</body>
+</html>
