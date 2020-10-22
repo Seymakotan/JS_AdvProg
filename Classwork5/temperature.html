@@ -1,0 +1,62 @@
+
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="https://maeyler.github.io/favicon.ico">
+    <title>C F </title>
+
+  <style> /* CSS comment */
+    body { max-width: 440px; }
+    #inp { width: 50px }
+    #out {
+        font-size: 18px;
+        background: blue;
+        color: white;
+        text-align: center;
+        padding: 10px;
+    }
+  </style>
+</head>
+
+<body>   <!-- HTML comment: Modify all items marked xxx -->
+
+<h2 id=title>CM INC Uzunluk Hesabı</h2>
+cm:
+<input type=number id=inpCM value=0 onChange="Uzunluk(value).fromInc(value)">
+&emsp;
+inc :
+<input type=number id=inpINC value=0 onChange="Uzunluk(value).inc">
+&emsp;
+
+
+<hr />
+<p>Ref: <a href="https://www.w3schools.com/js/" 
+   target="NewTab">JS Tutorial</a>
+</p>
+
+<script>
+"use strict";
+
+class Uzunluk{
+ constructor(cm){
+   this.cm=cm;
+ }
+ get inc(){
+    return (this.cm/2.54).toFixed(1);
+ }
+ set inc(value){
+   this.cm = (value*2.54).toFixed(1);
+ }
+ static fromInc(value){
+   return new Uzunluk((value/2.54).toFixed(1));
+ }
+}
+
+
+</script>
+
+</body>
+</html>
