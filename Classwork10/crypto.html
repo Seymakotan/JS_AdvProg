@@ -37,12 +37,7 @@
 
     </div>
 
-    <div id=div2>
-        <p><b>Sample Code</b></p>
-        <pre id=sample></pre>
-        <hr>
-
-    </div>
+    
 
     <link href="https://maeyler.github.io/JS/sss/inspector.css" rel="stylesheet">
     <script src="https://maeyler.github.io/JS/sss/inspector.js"></script>
@@ -56,21 +51,16 @@
                 this.M = M
             }
             shaFromBuffer(buf) { //ArrayBuffer or ArrayBufferView
-                crypto.zelgest(MENU.algorithm, buf)
+                crypto.subtle.digest(MENU.algorithm, buf)
                     .then(b => display(MENU.bufferToHex(b)))
             }
-
             shaFromFile(f) { //File or Blob
                 //use f.arrayBuffer()
-                return subtle.digest('SHA-1', new TextEncoder().encode(f.arrayBuffer()))
-                .then(x=>[...new Uint8Array(x)].map(toHex).join(''))
-                
-                //return "implement this"
+                f.arrayBuffer().then(MENU.shaFromBuffer)
             }
-            
             shaFromURL(u) { //URL or string
                 //use fetch(u).then ...
-                return "implement this"
+               fetch(u).then(r=r.arrayBuffer()).then(MENU.shaFromBuffer)
             }
             shaFromString(txt) {
                 if (txt.startsWith('https://')) {
@@ -107,8 +97,7 @@
         function init() {
             MENU = new Crypto() //global
             display(MENU)
-            sample.innerText = '  '
-                + MENU.shaFromFile + '\n  ' + MENU.shaFromURL
+          
         }
         //text.innerText = TEXT + ';\n' + text.innerText
         docName.innerText = document.title
