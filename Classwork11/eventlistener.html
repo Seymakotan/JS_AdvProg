@@ -7,7 +7,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
   <link rel="icon" href="/305/images/icon192.png">
-  <title>Event Listener</title>
+  <title>CW11</title>
 
   <style>
     /* CSS comment */
@@ -30,8 +30,6 @@
   <!-- HTML comment: Modify all items marked xxx -->
 
   <h2>Battery Status</h2>
-
-  
   <p>
     Charge Status : <span id=charge></span>
   </p>
@@ -56,8 +54,6 @@
 
   <script>
     "use strict";
-    // JavaScript comment
-
     function init() {
       navigator.getBattery().then(b =>
         level.innerText = 100 * b.level + '%'
@@ -85,7 +81,6 @@
         online.innerText = "disconnected--offline";
       }, false);
 
-     
     }
 
     sample.innerText = init + '\n';
