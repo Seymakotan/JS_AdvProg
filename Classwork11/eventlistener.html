@@ -1,86 +1,97 @@
 
+
 <!DOCTYPE html>
 <html lang="en-US">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <link rel="icon" href="https://blm-fsmvu.github.io/305/images/icon192.png">
-    <title>CW-11 </title>
 
-  <style> /* CSS comment */
-    body { max-width: 440px; }
-    #url { width: 190px; }
-    span, #url { color: blue; }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="icon" href="/305/images/icon192.png">
+  <title>Event Listener</title>
+
+  <style>
+    /* CSS comment */
+    body {
+      max-width: 440px;
+    }
+
+    #url {
+      width: 190px;
+    }
+
+    span,
+    #url {
+      color: blue;
+    }
   </style>
 </head>
 
-<body>   <!-- HTML comment: Modify all items marked xxx -->
+<body>
+  <!-- HTML comment: Modify all items marked xxx -->
 
-<h2 id=title title="Modify xxx"></h2>
+  <h2>Battery Status</h2>
 
-<h2>Battery Status</h2>
-<p title="Battery level">
-  Battery level <span id=level>??</span>
-</p>
+  
+  <p>
+    Charge Status : <span id=charge></span>
+  </p>
+  <p>
+    Charge level changes : <span id=levelChange></span>
+  </p>
 
-<p>
-    <span id=onchargingchg></span>
-</p>
+  <h2>Online Status</h2>
+  <p>
+    <span id=online></span>
+  </p>
 
+  <h2>Keyboard</h2>
+  <p>
+    Key : <span id=keyboard></span>
+  </p>
+  <hr />
+  <b>Sample code</b>
+  <pre id=sample>This text is not shown. Why?</pre>
 
-<h2>Online Status</h2>
+  <hr />
 
-<span id=status></span>
+  <script>
+    "use strict";
+    // JavaScript comment
 
+    function init() {
+      navigator.getBattery().then(b =>
+        level.innerText = 100 * b.level + '%'
+      )
+      navigator.getBattery().then(b =>
+        b.onchargingchange = () => charge.innerText = (b.charging ? "Charging" : "Discharging")
+      )
+      navigator.getBattery().then(b =>
+        b.onlevelchange = () => levelChange.innerText = (b.level * 100 + '%')
+      )
+      window.addEventListener("keydown", event => {
+        keyboard.innerText = event.key
+      });
 
-<h2>Keyboard</h2>
-<span id=keyboard></span>
+      window.addEventListener("keyup", event => {
+        keyboard.innerText = event.key
+      });
 
-
-<hr />
-<b>Sample code</b>
-<pre id=sample>This text is not shown. Why?</pre>
-
-<hr />
-
-<script>
-"use strict";
-// JavaScript comment
-
-
-function init() {
-//navigator.getBattery().then(b => level.innerText ="%"+ (b.level*100).toFixed(0) )
-navigator.getBattery().then(b =>b.onchargingchange = () => 
-    onchargingchg.innerText = (b.charging ? "Charging" : "Discharging") )
-
-navigator.getBattery().then(b =>
-     b.onlevelchange = () => level.innerText ="%" +((b.level*100).toFixed(0)))
-
-window.addEventListener("keydown", event=>{ keyboard.innerText=event.key});
-window.addEventListener("keyup",event=>{keyboard.innerText=event.key});
-
-if (navigator.onLine) {
-    status.innerText = "online -- connected";
-      } else {
-        status.innerText = "ofline --- disconnected";
-      }
-      window.addEventListener('online', e => {
-        status.innerText = "online -- connected";
+      online.innerText = navigator.onLine ? "connected--online" : "disconnected--offline";
+      window.addEventListener('online', event => {
+        online.innerText = "connected--online";
       }, false);
 
-      window.addEventListener('offline', e => {
-        status.innerText = "ofline --- disconnected";
+      window.addEventListener('offline', event => {
+        online.innerText = "disconnected--offline";
       }, false);
 
-}
+     
+    }
 
-
-
-
-//title.innerText = document.title;
-sample.innerText = init+'\n';
-init();
-</script>
+    sample.innerText = init + '\n';
+    init();
+  </script>
 
 </body>
+
 </html>
