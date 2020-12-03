@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://maeyler.github.io/305/work/GitHub_Users.html -->
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width">
+    
+    <title>GitHub Users</title>
+
+  <style>
+    body {
+        max-width: 440px;
+    }
+    img {
+        padding-right: 48px;
+        width: 180px;
+        border: 2px solid rgb(226, 221, 221);
+    }
+  </style>
+</head>
+
+<body>
+
+<h2 id=title></h2>
+<input type=text id=usr value=blm-fsmvu onChange="readUser()">
+<p id=out></p>
+
+<pre id=sample></pre>
+
+
+
+<script>
+"use strict";
+const NL = "\n", BR = "<BR>", 
+    URL = "https://api.github.com/users/"
+function error(t) {
+    out.style.color = 'red'
+    out.innerText = t; console.log(t)
+}
+function listRepos(b) {
+    if (b.length) 
+      out.innerHTML += 
+        b.map(x => x.login).join(" - ")
+}
+function userData(u) {
+    if (!u || !u.login) {
+      error(usr.value+' not found')
+      return
+    } 
+    //u.login is the same as usr.value
+    out.style.color = ''
+    out.innerHTML = ''
+    //start with a tiny image
+
+     out.innerHTML += BR;
+    let i = document.createElement("img")
+   
+    i.src = u.avatar_url
+    i.align = "center"
+    out.appendChild(i)
+
+     out.innerHTML += BR;
+     out.innerHTML += BR;
+     //add name and location
+     let name= (u.name? u.name : u.login).bold()
+     out.innerHTML += name; console.log(name)
+    out.innerHTML += BR;
+    let s = (u.login? u.login : u.login)
+    out.innerHTML += s+BR; console.log(s)
+    out.appendChild(document.createElement("br"))
+    let c=u.company
+    out.innerHTML+=c
+    out.appendChild(document.createElement("br"))
+    if (u.location) s = u.location
+    out.innerHTML += s+BR; console.log(s) 
+    let z = (u.email? u.email : "Mail not found")
+    out.innerHTML += z+BR; console.log(z)
+    //add link to GitHub 
+    let blog = u.blog
+    let a1 = document.createElement("a")
+    a1.href=blog
+    a1.target="NewTab"
+    a1.innerText=blog
+    out.appendChild(a1)
+    
+}
+function readUser() {
+    fetch(URL+usr.value)
+      .then(r => r.ok? r.json() : null) 
+      .then(userData).catch(error)
+}
+
+    title.innerText = document.title
+
+    out.innerText = "Reading data"
+    readUser()
+</script>
+
+</body></html>
