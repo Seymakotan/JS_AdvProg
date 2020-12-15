@@ -28,21 +28,21 @@ let answers=[ ["Ciddi ve titiz", "Serbest ve şakacı", "Hassas ve şirin", "Sor
 
 
 
-let gifs =["https://media4.giphy.com/media/l41lYvD5ArFOVGYGA/giphy.gif?cid=ecf05e4793b188251aa37ba67280f80b989820caecdf4114&rid=giphy.gif",
-"https://media3.giphy.com/media/l4KiaUHXv3dlpaUfu/giphy.gif",
-"https://media.giphy.com/media/26FPMl7wOA6u5ZN4s/giphy.gif",
-"https://media.giphy.com/media/26FPLlgcYfBBzwDxm/giphy.gif",
-"https://media.giphy.com/media/reM8u51LvPzOp8uAwg/giphy.gif",
-"amy_terry.gif",
-"https://i.pinimg.com/originals/08/5c/91/085c91a4a276ce0151346f391e105e15.gif",
-"amylate.gif"
+let gifs =["https://seymakotan.github.io/JS_AdvProg/Term_project_99/gif/soru1.gif",
+"https://seymakotan.github.io/JS_AdvProg/Term_project_99/gif/soru2.gif",
+"https://seymakotan.github.io/JS_AdvProg/Term_project_99/gif/soru3.gif",
+"https://seymakotan.github.io/JS_AdvProg/Term_project_99/gif/soru4.gif",
+"https://seymakotan.github.io/JS_AdvProg/Term_project_99/gif/soru5.gif",
+"https://seymakotan.github.io/JS_AdvProg/Term_project_99/gif/soru6.gif",
+"https://seymakotan.github.io/JS_AdvProg/Term_project_99/gif/soru7.gif",
+"https://seymakotan.github.io/JS_AdvProg/Term_project_99/gif/soru8.gif"
 ]
 
 let sonucgifs=[
-    "https://media.giphy.com/media/1wrhbkoNZG89WfI6Cy/giphy.gif",
-    "https://media.giphy.com/media/KxiRwO7tqXCTDVKobo/giphy.gif",
-    "https://media.giphy.com/media/nqCFcCwmMPWEk7P8hO/giphy.gif",
-    "https://media.giphy.com/media/9J6TRr1EyWVCMAxV6w/giphy.gif",
+    "https://seymakotan.github.io/JS_AdvProg/Term_project_99/gif/sonuc_holt2.gif",
+    "https://seymakotan.github.io/JS_AdvProg/Term_project_99/gif/sonuc_jake2.gif",
+    "https://seymakotan.github.io/JS_AdvProg/Term_project_99/gif/sonuc_boyle.gif",
+    "https://seymakotan.github.io/JS_AdvProg/Term_project_99/gif/sonuc_terry.gif",
 ]
 
 var options;
@@ -56,21 +56,17 @@ function puanlama(){
 
             if(i==0){
                 toplamA++;
-                toplam=toplam+2;
             }else if(i==1){
                 toplamB++;
-                toplam+=4   ;
             }else if (i==2){
-                toplam+=6;
                 toplamC++;
             }else if (i==3){
                 toplamD++;
-                toplam+=8;
             }
            
         }
     }
-    if(sayi==8){
+    if(sayi==9){
         document.getElementById("quizekran").style.visibility = "hidden" ;
         document.getElementById("ekran3").style.visibility = "visible" ;
 
@@ -100,31 +96,7 @@ function puanlama(){
             
         }
        
-    /*
-        if(14<=toplam && toplam<=32){
-            testsonuc="Raymond Holt "
-            console.log("holt");
-            document.getElementById("resultImg").src = sonucgifs[0];
-            document.getElementById("resultText1").innerText = "Reymond Holt";
-        }else if(21<=toplam && toplam<=24){
-            testsonuc="Jake Peralta "
-            console.log("jake");
-            document.getElementById("resultImg").src = sonucgifs[1];
-            document.getElementById("resultText1").innerText = "Jake Peralta";
-        }else if(30<=toplam && toplam<=48){
-            testsonuc="Charles Boyle "
-            console.log("Boyle");
-            document.getElementById("resultImg").src = sonucgifs[2];
-            document.getElementById("resultText1").innerText = "Charles Boyle";
-        }else if(26<=toplam && toplam<=35){
-            console.log("Terry Jeffords");
-            document.getElementById("resultImg").src = sonucgifs[3];
-            document.getElementById("resultText1").innerText = "Terry Jeffords";
-        }
-
-    */
-       
-
+   
 
     }
     //console.log("toplam puan :" +toplam);
@@ -189,48 +161,3 @@ degistir();
 
 
  
-
-    
-    /*
-
-     for(var i=0; i<options.length; i++){
-        if(options[i].checked){
-            if(i==0){
-                toplam=toplam+2;
-                console.log("toplam puan : "+toplam);
-            }else if(i==1){
-                toplam+=3;
-            }else if (i==2){
-                toplam+=4;
-            }else if (i==3){
-                toplam+=5;
-            }
-        }
-    }
-    if(sayi==7){
-
-
-        if(i==0){
-            toplam=toplam+2;
-        }else if(i==1){
-            toplam+=3;
-        }else if (i==2){
-            toplam+=4;
-        }else if (i==3){
-            toplam+=5;
-        }
-
-
-        console.log(toplam);
-        if(8<=toplam && toplam<=14){
-            console.log(toplam);
-        }else if(12<=toplam && toplam<=21){
-            console.log(toplam);
-        }else if(16<=toplam && toplam<=28){
-            console.log(toplam);
-        }else if(20<=toplam && toplam<=35){
-            console.log(toplam);
-        }
-        toplam=0;
-    }
-    */
