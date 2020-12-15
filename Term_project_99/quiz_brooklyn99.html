@@ -3,7 +3,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-	<title>BİLİŞİM BİLGİ YARIŞMASI</title>
+	<title>Brooklyn 99 Quiz</title>
 	<link rel="icon" sizes="192x192" href="avatar.PNG">
 	<style>
 body {
@@ -48,8 +48,8 @@ h2 {text-align:center;color:white;}
 #refreshButon{
 	cursor: pointer;
     background-color:  cornsilk;
-    width: 100px;
-    font-size: 15px;
+    width: 120px;
+    font-size: 20px;
     color: #1F2739;
     padding: 10px 10px;
     text-align:left;
@@ -67,12 +67,13 @@ h2 {text-align:center;color:white;}
 #choice0,#choice1,#choice2,#choice3{
 	color: rgb(8, 18, 107);
 	font-size: 17px;
-	font-weight: 200;
+	font-weight: 600;
 }
 
 .p2{
 	font-family: "Copperplate", Fantasy;
 }
+
 .option {
 	text-align: center;
     width: 500px;
@@ -89,10 +90,7 @@ h2 {text-align:center;color:white;}
     cursor: pointer;
     background-color: rgb(9, 10, 63);
 }
-qnum {
-    color: white;
-    font-size: 18px;
-}
+
 #mistake { text-align:center; color:red;}
 #rtime { text-align:center; color:red;}
 .btn{text-align:center;}
@@ -107,7 +105,8 @@ qnum {
 		
 		<br>
 		<h2 id="entrance" style="color: yellow;">Hangi Brooklyn 99 Karekterisin ?</h2>
-		<img id="giris" src="https://media.giphy.com/media/XD9o33QG9BoMis7iM4/giphy.gif" width="600" height="500" style="border-radius: 10px" style="text-align: center;">
+		<br>
+		<img id="giris" src="https://seymakotan.github.io/JS_AdvProg/Term_project_99/gif/welcome.gif" width="600" height="500" style="border-radius: 10px" style="text-align: center;">
 		<br><br><br>
 		<button id="buttongiris" onclick="gecisYap()" >Hadi Başlayalım</button>
 	  </div>
@@ -118,7 +117,7 @@ qnum {
 		<br><br>
 		<h2 style="color: yellow;">Hangi Brooklyn 99 Karakterisin ? </h2>
 		
-		<p id="qnum" style="font-size: 20px;">SORU: </p>
+		<p id="qnum" style="font-size: 20px; font-weight: 500;">SORU: </p>
 
 		<img id="testImg" src="" width="400" height="300"> <br><br>
 		<label class="option"> <input type='radio' name='option' id="op0" value='A' /> <span id='choice0'></span>  </label> <br>
@@ -140,7 +139,9 @@ qnum {
 	<br><br><br>
 	<h2 style="color: yellow;" style="text-align: center">TEST SONUCU </h2>
 	<img id="resultImg" src="" alt="" width="500" height="400" style="border-radius: 12px;">
+	<br><br>
 	<span> <p style="font-size: 18px;">Tebrikler !!! Test Sonucunda Çıkan 99 Karekteri</p></span>
+	
 	<p id="resultText1" style="font-size: 20px; color: yellow;">   </p>
 	<input type="button" value="Tekrar Çöz" id="refreshButon" onClick="document.location.reload(true)">
 	
