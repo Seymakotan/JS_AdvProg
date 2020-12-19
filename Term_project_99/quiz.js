@@ -48,64 +48,6 @@ let sonucgifs=[
 var options;
 var testsonuc;
 
-function puanlama(){
-
-    options = document.getElementsByName("option");
-    for(var i=0; i<options.length; i++){
-        if(options[i].checked){
-
-            if(i==0){
-                toplamA++;
-            }else if(i==1){
-                toplamB++;
-            }else if (i==2){
-                toplamC++;
-            }else if (i==3){
-                toplamD++;
-            }
-           
-        }
-    }
-    if(sayi==9){
-        document.getElementById("quizekran").style.visibility = "hidden" ;
-        document.getElementById("ekran3").style.visibility = "visible" ;
-
-        console.log(toplam);
-        if(toplamA==4 || (toplamA>=toplamB &&toplamA >=toplamC &&toplamA>=toplamD )){
-            testsonuc="Raymond Holt "
-            console.log("holt");
-            document.getElementById("resultImg").src = sonucgifs[0];
-            document.getElementById("resultText1").innerText = "Reymond Holt";
-
-        }else if(toplamB==4 || (toplamB>=toplamA &&toplamB>=toplamC &&toplamB>=toplamD )){
-            testsonuc="Jake Peralta "
-            console.log("jake");
-            document.getElementById("resultImg").src = sonucgifs[1];
-            document.getElementById("resultText1").innerText = "Jake Peralta";
-
-        }else if(toplamC==4 || (toplamC>=toplamA &&toplamC>=toplamB &&toplamC>=toplamD )){
-            testsonuc="Charles Boyle "
-            console.log("Boyle");
-            document.getElementById("resultImg").src = sonucgifs[2];
-            document.getElementById("resultText1").innerText = "Charles Boyle";
-
-        }else if(toplamD==4 || (toplamD>=toplamA &&toplamD>=toplamB &&toplamD>=toplamC)){
-            console.log("Terry Jeffords");
-            document.getElementById("resultImg").src = sonucgifs[3];
-            document.getElementById("resultText1").innerText = "Terry Jeffords";
-            
-        }
-       
-   
-
-    }
-    //console.log("toplam puan :" +toplam);
-    console.log("A : " +toplamA);
-    console.log("B : " +toplamB);
-    console.log("C : " +toplamC);
-    console.log("D : " +toplamD);
-
-}
 
 
 
@@ -113,7 +55,7 @@ function puanlama(){
 var options;    
 function degistir(){
    
-    if(sayi!=8){
+    if(sayi!=7){
        
     document.getElementById("qnum").innerHTML = questions[sayi];
     document.getElementById("testImg").src = gifs[sayi];
@@ -121,10 +63,10 @@ function degistir(){
     for(var i = 0; i < choices.length; i++) {
         document.getElementById("choice" + i).innerHTML = choices[i];
         }
+        sayi++;
     }
-    sayi++;
+    
     //puanlama();
-    puanlama();
     op0.checked = false;
     op1.checked = false;
     op2.checked = false;
@@ -133,31 +75,16 @@ function degistir(){
     
     }
 
-    function sonuc(){
-        console.log(toplam);
-        if(8<=toplam && toplam<=14){
-            
-        }else if(12<=toplam && toplam<=21){
-            console.log("jake");
-        }else if(16<=toplam && toplam<=28){
-            console.log("boyle");
-        }else if(20<=toplam && toplam<=35){
-            console.log("terry");
-        }
-    }
- 
+    
 
-function play() {
-    let audio1 = new Audio('theme.mp3');
-    audio1.play();
-}
 function gecisYap(){
     document.getElementById("ekran1").style.visibility = "hidden" ;
     document.getElementById("quizekran").style.visibility = "visible" ;
-    play();
+   
     }
 
 degistir();
 
 
  
+
