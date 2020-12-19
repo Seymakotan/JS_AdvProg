@@ -28,32 +28,15 @@ body {
     top: 0;
  
 }
-#ekran3 {
-	text-align: center;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-}
+
 h2 {text-align:center;color:white;}
-#score {
-    text-align:center;
-	color:lime;	
-}
+
 .question {
     font-family: "white";
     font-size: 30px;
     color: white;
 }
-#refreshButon{
-	cursor: pointer;
-    background-color:  cornsilk;
-    width: 120px;
-    font-size: 20px;
-    color: #1F2739;
-    padding: 10px 10px;
-    text-align:left;
-    border-radius: 14px;
-}
+
 #buttongiris{
 	background-color:  cornsilk;
 	text-align: center; 
@@ -118,7 +101,7 @@ h2 {text-align:center;color:white;}
 		
 		<p id="qnum" style="font-size: 20px; font-weight: 500;">SORU: </p>
 
-		<img id="testImg" src="" width="500" height="250"> <br><br>
+		<img id="testImg" src="" width="500" height="250" style="border-radius: 10px;"> <br><br>
 		<label class="option"> <input type='radio' name='option' id="op0" value='A' /> <span id='choice0'></span>  </label> <br>
 		<label class="option"> <input type='radio' name='option' id="op1" value='B' /> <span id='choice1'></span>  </label> <br>
 		<label class="option"> <input type='radio' name='option' id="op2" value='C' /> <span id='choice2'></span>  </label> <br>
@@ -134,17 +117,7 @@ h2 {text-align:center;color:white;}
 
 </div>
 
-<div id="ekran3" style="visibility:hidden" >
-	<br><br><br>
-	<h2 style="color: yellow;" style="text-align: center">TEST SONUCU </h2>
-	<img id="resultImg" src="" alt="" width="500" height="300" style="border-radius: 12px;">
-	<br><br>
-	<span> <p style="font-size: 18px;">Tebrikler !!! Test Sonucunda Çıkan 99 Karekteri</p></span>
-	
-	<p id="resultText1" style="font-size: 20px; color: yellow;">   </p>
-	<input type="button" value="Tekrar Çöz" id="refreshButon" onClick="document.location.reload(true)">
-	
-  </div>
+
 
 <script src="quiz.js" >
  
