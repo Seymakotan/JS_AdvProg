@@ -16,13 +16,13 @@ let questions = ["Arkadaşların seni hangi şekilde tanımlar?",
 "Diyelim ki işe veya okula geç kaldın, mazeretin ne olur?"];
 
 let answers=[ ["Ciddi ve titiz", "Serbest ve şakacı", "Hassas ve şirin", "Sorumluluk sahibi"],
- ["Son derece düzenleyim ve bu konuda obsesifim.", "Ara ki bulasın. Çok dağınığımdır, toplamaya üşenirim hep.", "Süper toplu değilim ama kendime göre bir düzenim var tabii.", "Obsesif olmasam da düzenliyim ben de."],
- ["Yemek seçerim ama bazı yemekleri çok iyi pişiririm ve çok severim.","Önüme ne gelse yerim.","Acayip bir damak zevkim var!","Çok yemek seçmem ama her gün aksatmadan yediğim şeyler de var."],
-[" Kimse üzüldüğünü anlayamaz.", "Saklamaya çalışsam da yüzümden ve davranışlarımdan okunur.", "Yerlere kapanıp ağlarım.", "Bakmayın sert görünüşüme üzüldüğümü anlarsınız mutlaka..."],
+ ["Son derece düzenleyim ve bu konuda obsesifim.", "Ara ki bulasın. Çok dağınığımdır, toplamaya üşenirim hep.", "Süper toplu değilim,kendime göre bir düzenim var tabii.", "Obsesif olmasam da düzenliyim ben de."],
+ ["Yemek seçerim, ama bazılarını çok iyi pişiririm severim.","Önüme ne gelse yerim.","Acayip bir damak zevkim var!","Çok yemek seçmem ama her gün yediğim şeyler de var."],
+[" Kimse üzüldüğünü anlayamaz.", "Saklamaya çalışsam da jest ve mimiklerden okunur.", "Yerlere kapanıp ağlarım.", "Bakmayın sert görünüşüme üzüldüğümü anlarsınız."],
 ["Hayır. ", "Her ortamın neşe kaynağıyım ben!", "En yakın arkadaşımla komik olmam yeter de artar bile.", "Yerine göre."],
 ["Deneyimim yok.", "Ağlamasınlar diye aklıma gelen her şeyi denerim.", "Çok iyi ilgilenebilirim.", "Bakmayı çok severim ama bazen cidden bunalırım."],
 ["Her şeyi kurallarına göre oynayıp milleti uyuz eden.","Oyundan en çok keyfi alan ve hırsı olmayan.","Herkesle anlaşabilen mükemel bir eşim","Ne hırslıyımdır ne çok coşarım."],
-["Asla geç kalmam.","Bir mazerete gerek yok ne olmuş ki geç kalmışsam esprili bir giriş yaparım.","Çörek almaya gitmiştim.","Geç kalmamaya çalışırım her zaman örnek olmak isterim."]
+["Asla geç kalmam.","Bir mazerete gerek yok esprili bir giriş yaparım.","Çörek almaya gitmiştim.","Geç kalmamaya çalışırım her zaman örnek olmak isterim."]
 ];
 
 
@@ -55,7 +55,7 @@ var testsonuc;
 var options;    
 function degistir(){
    
-    if(sayi!=7){
+    if(sayi!=8){
        
     document.getElementById("qnum").innerHTML = questions[sayi];
     document.getElementById("testImg").src = gifs[sayi];
@@ -63,27 +63,30 @@ function degistir(){
     for(var i = 0; i < choices.length; i++) {
         document.getElementById("choice" + i).innerHTML = choices[i];
         }
-        sayi++;
     }
-    
-    //puanlama();
+    sayi++;
+
     op0.checked = false;
     op1.checked = false;
     op2.checked = false;
     op3.checked = false;
-
-    
+  
+    if(sayi==9){
+        document.getElementById("quizekran").style.visibility = "hidden" ;
+        document.getElementById("ekran3").style.visibility = "visible" ;
+     
     }
 
     
+    }
 
 function gecisYap(){
     document.getElementById("ekran1").style.visibility = "hidden" ;
     document.getElementById("quizekran").style.visibility = "visible" ;
-   
     }
 
 degistir();
+
 
 
  
