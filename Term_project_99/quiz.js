@@ -151,7 +151,7 @@ function degistir(){
 
 
 function play() {
-    let audio1 = new Audio('theme.mp3');
+    let audio1 = new Audio('https://seymakotan.github.io/JS_AdvProg/Term_project_99/theme.mp3');
     audio1.play();
 }
 
