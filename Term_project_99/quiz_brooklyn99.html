@@ -4,10 +4,11 @@
 <head lang="en">
     <meta charset="UTF-8">
 	<title>Brooklyn 99 Quiz</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width">
 	<link rel="icon" sizes="192x192" href="avatar.PNG">
 	<style>
 body {
+	
 	background-color:#1F2739; 
 	font-family:arial;
 	color:white;
@@ -17,6 +18,7 @@ body {
 	text-align: center;
 }
 #ekran1{
+	padding-left: 4%;
 	height:100%;
 
  background-position: center;
@@ -24,6 +26,7 @@ body {
   background-size: cover;
 }
 #quizekran{
+	padding-left: 4%;
 	text-align: center;
     position: fixed;
     z-index: 1;
@@ -31,6 +34,7 @@ body {
  
 }
 #ekran3 {
+	padding-left: 4%;
 	text-align: center;
     position: fixed;
     z-index: 1;
@@ -51,6 +55,7 @@ h2 {text-align:center;color:white;}
     background-color:  cornsilk;
     width: 120px;
     font-size: 20px;
+	font-weight: 300; 
     color: #1F2739;
     padding: 10px 10px;
     text-align:left;
@@ -60,7 +65,7 @@ h2 {text-align:center;color:white;}
 	background-color:  cornsilk;
 	text-align: center; 
 	font-size: 20px; 
-	font-weight: 600; 
+	font-weight: 300; 
 	border-radius: 10px; 
 	padding: 10px; 
 	color: rgb(18, 18, 124);
@@ -110,6 +115,9 @@ h2 {text-align:center;color:white;}
 		<img id="giris" src="https://seymakotan.github.io/JS_AdvProg/Term_project_99/gif/welcome.gif" width="500" height="400" style="border-radius: 10px" style="text-align: center;">
 		<br><br><br>
 		<button id="buttongiris" onclick="gecisYap()" >Hadi Başlayalım</button>
+		<br><br><br> 
+		<p style="color: rgb(232, 233, 167);"> Made by Seyma Kotan 2020</p>
+		
 	  </div>
 	
 <div id ="quizekran" style="visibility:hidden" onchange="degistir()">
@@ -136,13 +144,14 @@ h2 {text-align:center;color:white;}
 
 </div>
 
-<div id="ekran3" style="visibility:hidden" >
+<div  id="ekran3" style="visibility:hidden" >
 	<br><br><br>
 	<h2 style="color: yellow;" style="text-align: center">TEST SONUCU </h2>
-	<img id="resultImg" src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Brooklyn_Nine-Nine_Logo.png" alt="" width="500" height="250" style="border-radius: 12px; padding: 5%;">
+	<img id="resultImg" src="" alt="" width="500" height="300" style="border-radius: 12px;">
 	<br><br>
-	
-	<p id="resultText1" style="font-size: 20px; color: yellow;">   </p>
+	<span> <p style="font-size: 18px; color: rgb(241, 243, 151);">Tebrikler Testi Tamamladın !!!</p></span>
+	<span> <p style="font-size: 18px;">Test Sonucunda Çıkan 99 Karekteri</p></span>
+	<p id="resultText1" style="font-size: 24px; color: yellow;">   </p>
 	<input type="button" value="Tekrar Çöz" id="refreshButon" onClick="document.location.reload(true)">
 	
   </div>
