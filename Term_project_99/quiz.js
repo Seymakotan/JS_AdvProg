@@ -44,7 +44,6 @@ let sonucgifs=[
     "https://seymakotan.github.io/JS_AdvProg/Term_project_99/gif/sonuc_boyle.gif",
     "https://seymakotan.github.io/JS_AdvProg/Term_project_99/gif/sonuc_terry.gif",
 ]
-let aciklama=["Sen adeta ciddiyetin sembolüsün. Yüzünde hiç mi mimik oynamaz, hiç mi gülümsemez ya da gülmezsin sen? Ya bakma şakaya vurduğumuza sen de gülüp eğleniyorsun tabii ama bu kadar çok kasma her şeyi, biraz rahatla lütfen. Belki gevşemek sana korkunç bir kelime gibi geliyor ama gerçekten biraz gevşesen ruhun ne kadar rahatlayacak haberin yok. "]
 var options;
 var testsonuc;
 
@@ -152,7 +151,7 @@ function degistir(){
 
 
 function play() {
-    let audio1 = new Audio('https://seymakotan.github.io/JS_AdvProg/Term_project_99/theme.mp3');
+    let audio1 = new Audio('theme.mp3');
     audio1.play();
 }
 
