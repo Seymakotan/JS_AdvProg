@@ -102,10 +102,10 @@ function puanlama(){
 
     }
     //console.log("toplam puan :" +toplam);
-    console.log("A : " +toplamA);
-    console.log("B : " +toplamB);
-    console.log("C : " +toplamC);
-    console.log("D : " +toplamD);
+    //console.log("A : " +toplamA);
+    //console.log("B : " +toplamB);
+    //console.log("C : " +toplamC);
+    //console.log("D : " +toplamD);
 
 }
 
