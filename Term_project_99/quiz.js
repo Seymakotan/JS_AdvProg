@@ -77,19 +77,19 @@ function puanlama(){
             document.getElementById("resultText1").innerText = "Reymond Holt";
             
 
-        }else if(toplamB==4 || (toplamB>toplamA &&toplamB>toplamC &&toplamB>toplamD )){
+        }else if(toplamB==4 || (toplamB>=toplamA &&toplamB>=toplamC &&toplamB>=toplamD )){
             testsonuc="Jake Peralta "
             console.log("jake");
             document.getElementById("resultImg").src = sonucgifs[1];
             document.getElementById("resultText1").innerText = "Jake Peralta";
 
-        }else if(toplamC==4 || (toplamC>toplamA &&toplamC>toplamB &&toplamC>toplamD )){
+        }else if(toplamC==4 || (toplamC>=toplamA &&toplamC>=toplamB &&toplamC>=toplamD )){
             testsonuc="Charles Boyle "
             console.log("Boyle");
             document.getElementById("resultImg").src = sonucgifs[2];
             document.getElementById("resultText1").innerText = "Charles Boyle";
 
-        }else if(toplamD==4 || (toplamD>toplamA &&toplamD>toplamB &&toplamD>toplamC)){
+        }else if(toplamD==4 || (toplamD>=toplamA &&toplamD>=toplamB &&toplamD>=toplamC)){
             console.log("Terry Jeffords");
             document.getElementById("resultImg").src = sonucgifs[3];
             document.getElementById("resultText1").innerText = "Terry Jeffords";
